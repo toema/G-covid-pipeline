@@ -1,6 +1,10 @@
 # trino-minio-docker
 
-Minimal example to run Trino with Minio and the Hive standalone metastore on Docker. The data used in this tutorial is from Microsoft AdventureWorks database.  
+Minimal example to run Trino with Minio and the Hive standalone metastore on Docker. The data used in this tutorial is from [kaggle](https://www.kaggle.com/datasets/imdevskp/corona-virus-report) .  
+
+
+![image](https://github.com/toema/G-covid-pipeline/assets/24652738/8996718c-d135-4818-ac81-4104e790623a)
+
 
 ## Installation and Setup
 
@@ -64,20 +68,29 @@ Create schema and create table with:
 
 ```bash
 ./trino --execute "
-CREATE SCHEMA IF NOT EXISTS minio.sales
-WITH (location = 's3a://sales/');
+CREATE SCHEMA IF NOT EXISTS minio.c19
+WITH (location = 's3a://c19/');
 
-CREATE TABLE IF NOT EXISTS minio.sales.sales_parquet (
-  productcategoryname VARCHAR,
-  productsubcategoryname VARCHAR,
-  productname VARCHAR,
-  country VARCHAR,
-  salesamount DOUBLE,
-  orderdate timestamp
+CREATE TABLE IF NOT EXISTS minio.c19.country_wise_latest (
+  Country_or_Region VARCHAR,
+  Confirmed VARCHAR,
+  Deaths VARCHAR,
+  Recovered VARCHAR,
+  Active VARCHAR,
+  New_cases VARCHAR,
+  New_deaths VARCHAR,
+  New_recovered VARCHAR,
+  Deaths_Per_100_Cases VARCHAR,
+Recovered_Per_100_Cases VARCHAR,
+Deaths_Per_100_Recovered VARCHAR,
+Confirmed_last_week VARCHAR,
+_1_week_change VARCHAR,
+_1_week_Per_increase VARCHAR,
+WHO_Region VARCHAR
 )
 WITH (
-  external_location = 's3a://sales/',
-  format = 'PARQUET'
+  external_location = 's3a://c19/',
+  format = 'CSV'
 );
 "
 ```
@@ -86,8 +99,8 @@ Query the newly created table with:
 
 ```bash
 ./trino --execute "
-SHOW TABLES IN minio.sales;
-SELECT * FROM minio.sales.sales_parquet LIMIT 5;"
+SHOW TABLES IN minio.c19;
+SELECT * FROM minio.c19.country_wise_latest LIMIT 5;"
 ```
 
 # License
