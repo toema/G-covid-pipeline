@@ -102,6 +102,7 @@ Query the newly created table with:
 SHOW TABLES IN minio.c19;
 SELECT * FROM minio.c19.country_wise_latest LIMIT 5;"
 ```
+Use PowerBI trino connector to connect trino SQL engine to powerBI
 
 # License
 
