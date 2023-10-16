@@ -1,0 +1,2 @@
+ALTER SCHEMA minio.covid19 SET AUTHORIZATION ROLE PUBLIC;
+DROP TABLE IF EXISTS minio.covid19.country_wise_latest
