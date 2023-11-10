@@ -19,6 +19,7 @@ WITH (
   external_location = 's3a://c19/',
   format = 'CSV'
 );
+<<<<<<< HEAD
 
 CREATE TABLE IF NOT EXISTS minio.c19.aggregated_cc_by (
   open_covid_region_code VARCHAR,
@@ -45,3 +46,5 @@ WITH (
   external_location = 's3a://c19/exports',
   format = 'CSV'
 );
+=======
+>>>>>>> refs/remotes/origin/main
