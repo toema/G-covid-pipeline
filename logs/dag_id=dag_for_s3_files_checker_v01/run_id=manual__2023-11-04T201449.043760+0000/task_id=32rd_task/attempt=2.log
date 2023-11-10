@@ -1,0 +1,20 @@
+[2023-11-04T20:25:46.415+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:14:49.043760+00:00/task_id=32rd_task permission to 509
+[2023-11-04T20:25:46.554+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:14:49.043760+00:00/task_id=32rd_task permission to 509
+[2023-11-04T20:25:46.696+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_for_s3_files_checker_v01.32rd_task manual__2023-11-04T20:14:49.043760+00:00 [queued]>
+[2023-11-04T20:25:46.734+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_for_s3_files_checker_v01.32rd_task manual__2023-11-04T20:14:49.043760+00:00 [queued]>
+[2023-11-04T20:25:46.739+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 6
+[2023-11-04T20:25:46.784+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 32rd_task> on 2023-11-04 20:14:49.043760+00:00
+[2023-11-04T20:25:46.806+0000] {standard_task_runner.py:57} INFO - Started process 1872 to run task
+[2023-11-04T20:25:46.826+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_for_s3_files_checker_v01', '32rd_task', 'manual__2023-11-04T20:14:49.043760+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/check_S3_files.py', '--cfg-path', '/tmp/tmp6nkd28pw']
+[2023-11-04T20:25:46.845+0000] {standard_task_runner.py:85} INFO - Job 42: Subtask 32rd_task
+[2023-11-04T20:25:47.057+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:14:49.043760+00:00/task_id=32rd_task permission to 509
+[2023-11-04T20:25:47.082+0000] {task_command.py:416} INFO - Running <TaskInstance: dag_for_s3_files_checker_v01.32rd_task manual__2023-11-04T20:14:49.043760+00:00 [running]> on host c1553d42a04f
+[2023-11-04T20:25:47.556+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='dag_for_s3_files_checker_v01' AIRFLOW_CTX_TASK_ID='32rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-04T20:14:49.043760+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-04T20:14:49.043760+00:00'
+[2023-11-04T20:25:47.569+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-04T20:25:47.581+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pwd']
+[2023-11-04T20:25:47.663+0000] {subprocess.py:86} INFO - Output:
+[2023-11-04T20:25:47.679+0000] {subprocess.py:93} INFO - /tmp/***tmpgp1b3o8u
+[2023-11-04T20:25:47.685+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-04T20:25:47.874+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_for_s3_files_checker_v01, task_id=32rd_task, execution_date=20231104T201449, start_date=20231104T202546, end_date=20231104T202547
+[2023-11-04T20:25:48.022+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-04T20:25:48.108+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

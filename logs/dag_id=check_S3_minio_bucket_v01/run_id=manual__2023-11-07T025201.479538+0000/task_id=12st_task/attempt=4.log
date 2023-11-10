@@ -1,0 +1,54 @@
+[2023-11-07T03:23:58.212+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=check_S3_minio_bucket_v01/run_id=manual__2023-11-07T02:52:01.479538+00:00/task_id=12st_task permission to 509
+[2023-11-07T03:23:58.328+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=check_S3_minio_bucket_v01/run_id=manual__2023-11-07T02:52:01.479538+00:00/task_id=12st_task permission to 509
+[2023-11-07T03:23:58.428+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: check_S3_minio_bucket_v01.12st_task manual__2023-11-07T02:52:01.479538+00:00 [queued]>
+[2023-11-07T03:23:58.459+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: check_S3_minio_bucket_v01.12st_task manual__2023-11-07T02:52:01.479538+00:00 [queued]>
+[2023-11-07T03:23:58.460+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 6
+[2023-11-07T03:23:58.512+0000] {taskinstance.py:1382} INFO - Executing <Task(S3KeySensor): 12st_task> on 2023-11-07 02:52:01.479538+00:00
+[2023-11-07T03:23:58.557+0000] {standard_task_runner.py:57} INFO - Started process 29653 to run task
+[2023-11-07T03:23:58.564+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'check_S3_minio_bucket_v01', '12st_task', 'manual__2023-11-07T02:52:01.479538+00:00', '--job-id', '340', '--raw', '--subdir', 'DAGS_FOLDER/check_S3_bucket.py', '--cfg-path', '/tmp/tmpvcbr6xb1']
+[2023-11-07T03:23:58.572+0000] {standard_task_runner.py:85} INFO - Job 340: Subtask 12st_task
+[2023-11-07T03:23:58.754+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=check_S3_minio_bucket_v01/run_id=manual__2023-11-07T02:52:01.479538+00:00/task_id=12st_task permission to 509
+[2023-11-07T03:23:58.772+0000] {task_command.py:416} INFO - Running <TaskInstance: check_S3_minio_bucket_v01.12st_task manual__2023-11-07T02:52:01.479538+00:00 [running]> on host c4630ce72677
+[2023-11-07T03:23:59.087+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='check_S3_minio_bucket_v01' AIRFLOW_CTX_TASK_ID='12st_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-07T02:52:01.479538+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-07T02:52:01.479538+00:00'
+[2023-11-07T03:23:59.092+0000] {s3.py:106} INFO - Poking for key : s3://minio/c19/country_wise_latest.csv
+[2023-11-07T03:23:59.153+0000] {base.py:73} INFO - Using connection ID 's3_minio_conn' for task execution.
+[2023-11-07T03:23:59.157+0000] {connection_wrapper.py:343} INFO - AWS Connection (conn_id='s3_minio_conn', conn_type='aws') credentials retrieved from extra.
+[2023-11-07T03:24:01.646+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/sensors/s3.py", line 144, in execute
+    super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/base.py", line 257, in execute
+    raise e
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/sensors/base.py", line 239, in execute
+    poke_return = self.poke(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/sensors/s3.py", line 137, in poke
+    return self._check_key(self.bucket_key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/sensors/s3.py", line 125, in _check_key
+    obj = self.hook.head_object(key, bucket_name)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 136, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 90, in wrapper
+    return func(*bound_args.args, **bound_args.kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/amazon/aws/hooks/s3.py", line 879, in head_object
+    return self.get_conn().head_object(Bucket=bucket_name, Key=key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/client.py", line 535, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/client.py", line 928, in _make_api_call
+    api_params = self._emit_api_params(
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/client.py", line 1043, in _emit_api_params
+    self.meta.events.emit(
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/botocore/handlers.py", line 284, in validate_bucket_name
+    raise ParamValidationError(report=error_msg)
+botocore.exceptions.ParamValidationError: Parameter validation failed:
+Invalid bucket name "minio/c19": Bucket name must match the regex "^[a-zA-Z0-9.\-_]{1,255}$" or be an ARN matching the regex "^arn:(aws).*:(s3|s3-object-lambda):[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws).*:s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$"
+[2023-11-07T03:24:01.691+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=check_S3_minio_bucket_v01, task_id=12st_task, execution_date=20231107T025201, start_date=20231107T032358, end_date=20231107T032401
+[2023-11-07T03:24:01.732+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 340 for task 12st_task (Parameter validation failed:
+Invalid bucket name "minio/c19": Bucket name must match the regex "^[a-zA-Z0-9.\-_]{1,255}$" or be an ARN matching the regex "^arn:(aws).*:(s3|s3-object-lambda):[a-z\-0-9]*:[0-9]{12}:accesspoint[/:][a-zA-Z0-9\-.]{1,63}$|^arn:(aws).*:s3-outposts:[a-z\-0-9]+:[0-9]{12}:outpost[/:][a-zA-Z0-9\-]{1,63}[/:]accesspoint[/:][a-zA-Z0-9\-]{1,63}$"; 29653)
+[2023-11-07T03:24:01.798+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-07T03:24:01.847+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

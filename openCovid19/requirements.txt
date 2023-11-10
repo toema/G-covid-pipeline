@@ -1,0 +1,7 @@
+pyyaml
+python3-wget
+xlrd
+pandas
+streamlit
+aiohttp
+yamale

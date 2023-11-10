@@ -1,0 +1,19 @@
+[2023-11-04T23:49:58.293+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=2nd_task permission to 509
+[2023-11-04T23:49:58.333+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=2nd_task permission to 509
+[2023-11-04T23:49:58.384+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_google_data_v01.2nd_task manual__2023-11-04T23:49:55.656438+00:00 [queued]>
+[2023-11-04T23:49:58.397+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_google_data_v01.2nd_task manual__2023-11-04T23:49:55.656438+00:00 [queued]>
+[2023-11-04T23:49:58.399+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-04T23:49:58.418+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 2nd_task> on 2023-11-04 23:49:55.656438+00:00
+[2023-11-04T23:49:58.423+0000] {standard_task_runner.py:57} INFO - Started process 761 to run task
+[2023-11-04T23:49:58.426+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'fetch_google_data_v01', '2nd_task', 'manual__2023-11-04T23:49:55.656438+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/fetch_data.py', '--cfg-path', '/tmp/tmp89976p92']
+[2023-11-04T23:49:58.429+0000] {standard_task_runner.py:85} INFO - Job 118: Subtask 2nd_task
+[2023-11-04T23:49:58.486+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=2nd_task permission to 509
+[2023-11-04T23:49:58.492+0000] {task_command.py:416} INFO - Running <TaskInstance: fetch_google_data_v01.2nd_task manual__2023-11-04T23:49:55.656438+00:00 [running]> on host 264d7b91d87b
+[2023-11-04T23:49:58.586+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='fetch_google_data_v01' AIRFLOW_CTX_TASK_ID='2nd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-04T23:49:55.656438+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-04T23:49:55.656438+00:00'
+[2023-11-04T23:49:58.588+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-04T23:49:58.590+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/dags']
+[2023-11-04T23:49:58.603+0000] {subprocess.py:86} INFO - Output:
+[2023-11-04T23:49:58.606+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-04T23:49:58.637+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=fetch_google_data_v01, task_id=2nd_task, execution_date=20231104T234955, start_date=20231104T234958, end_date=20231104T234958
+[2023-11-04T23:49:58.680+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-04T23:49:58.706+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

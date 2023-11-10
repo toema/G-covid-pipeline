@@ -1,0 +1,34 @@
+[2023-11-09T13:29:18.542+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=scheduled__2023-11-08T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-09T13:29:19.641+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=scheduled__2023-11-08T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-09T13:29:25.569+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: export_google_data_v02.3rd_task scheduled__2023-11-08T00:00:00+00:00 [queued]>
+[2023-11-09T13:29:25.973+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: export_google_data_v02.3rd_task scheduled__2023-11-08T00:00:00+00:00 [queued]>
+[2023-11-09T13:29:26.015+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 6
+[2023-11-09T13:29:26.683+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-08 00:00:00+00:00
+[2023-11-09T13:29:26.721+0000] {standard_task_runner.py:57} INFO - Started process 8578 to run task
+[2023-11-09T13:29:26.752+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'export_google_data_v02', '3rd_task', 'scheduled__2023-11-08T00:00:00+00:00', '--job-id', '479', '--raw', '--subdir', 'DAGS_FOLDER/export_data.py', '--cfg-path', '/tmp/tmpz0eb8t_b']
+[2023-11-09T13:29:26.801+0000] {standard_task_runner.py:85} INFO - Job 479: Subtask 3rd_task
+[2023-11-09T13:29:27.311+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=scheduled__2023-11-08T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-09T13:29:27.443+0000] {task_command.py:416} INFO - Running <TaskInstance: export_google_data_v02.3rd_task scheduled__2023-11-08T00:00:00+00:00 [running]> on host a4fee2fb2c17
+[2023-11-09T13:29:28.522+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='export_google_data_v02' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-08T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-08T00:00:00+00:00'
+[2023-11-09T13:29:28.547+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-09T13:29:28.566+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/export_data.py']
+[2023-11-09T13:29:28.748+0000] {subprocess.py:86} INFO - Output:
+[2023-11-09T13:34:03.794+0000] {subprocess.py:93} INFO - WARNING:root:Loading succeeded on source our_world_in_data for date 2023-11-09
+[2023-11-09T13:34:07.027+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to queued. Terminating instance.
+[2023-11-09T13:34:07.051+0000] {process_utils.py:131} INFO - Sending 15 to group 8578. PIDs of all processes in the group: [8584, 8578]
+[2023-11-09T13:34:07.056+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 8578
+[2023-11-09T13:34:07.061+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-11-09T13:34:07.064+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2023-11-09T13:34:07.305+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-11-09T13:34:08.778+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=export_google_data_v02, task_id=3rd_task, execution_date=20231108T000000, start_date=20231109T132925, end_date=20231109T133408
+[2023-11-09T13:34:09.177+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 479 for task 3rd_task (Task received SIGTERM signal; 8578)
+[2023-11-09T13:34:10.931+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=8578, status='terminated', exitcode=1, started='13:29:25') (8578) terminated with exit code 1
+[2023-11-09T13:34:11.125+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=8584, status='terminated', started='13:29:27') (8584) terminated with exit code None

@@ -1,0 +1,2 @@
+[2023-11-04T20:25:54.084+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=scheduled__2023-11-02T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-04T20:25:54.230+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=scheduled__2023-11-02T00:00:00+00:00/task_id=3rd_task permission to 509

@@ -1,0 +1,17 @@
+[2023-11-04T21:10:04.667+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:19:13.636426+00:00/task_id=3rd_task permission to 509
+[2023-11-04T21:10:04.707+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:19:13.636426+00:00/task_id=3rd_task permission to 509
+[2023-11-04T21:10:04.762+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_for_s3_files_checker_v01.3rd_task manual__2023-11-04T20:19:13.636426+00:00 [queued]>
+[2023-11-04T21:10:04.778+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_for_s3_files_checker_v01.3rd_task manual__2023-11-04T20:19:13.636426+00:00 [queued]>
+[2023-11-04T21:10:04.779+0000] {taskinstance.py:1361} INFO - Starting attempt 6 of 6
+[2023-11-04T21:10:04.803+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): 3rd_task> on 2023-11-04 20:19:13.636426+00:00
+[2023-11-04T21:10:04.813+0000] {standard_task_runner.py:57} INFO - Started process 4043 to run task
+[2023-11-04T21:10:04.818+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_for_s3_files_checker_v01', '3rd_task', 'manual__2023-11-04T20:19:13.636426+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/check_S3_files.py', '--cfg-path', '/tmp/tmpt7cnruip']
+[2023-11-04T21:10:04.822+0000] {standard_task_runner.py:85} INFO - Job 77: Subtask 3rd_task
+[2023-11-04T21:10:04.909+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=dag_for_s3_files_checker_v01/run_id=manual__2023-11-04T20:19:13.636426+00:00/task_id=3rd_task permission to 509
+[2023-11-04T21:10:04.918+0000] {task_command.py:416} INFO - Running <TaskInstance: dag_for_s3_files_checker_v01.3rd_task manual__2023-11-04T20:19:13.636426+00:00 [running]> on host c1553d42a04f
+[2023-11-04T21:10:05.044+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='dag_for_s3_files_checker_v01' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-04T20:19:13.636426+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-04T20:19:13.636426+00:00'
+[2023-11-04T21:10:05.050+0000] {logging_mixin.py:151} WARNING - usage: *** [-h] [--allowlist] [--no-allowlist] [--source SOURCE]
+               [--date DATE] [--publish_dir PUBLISH_DIR]
+[2023-11-04T21:10:05.051+0000] {logging_mixin.py:151} WARNING - ***: error: unrecognized arguments: scheduler
+[2023-11-04T21:10:05.071+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 2
+[2023-11-04T21:10:05.095+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

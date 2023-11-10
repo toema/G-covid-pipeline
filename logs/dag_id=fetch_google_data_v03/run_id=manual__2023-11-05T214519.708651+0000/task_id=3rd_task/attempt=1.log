@@ -1,0 +1,43 @@
+[2023-11-05T21:55:58.081+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:45:19.708651+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:55:58.134+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:45:19.708651+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:55:58.214+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:45:19.708651+00:00 [queued]>
+[2023-11-05T21:55:58.235+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:45:19.708651+00:00 [queued]>
+[2023-11-05T21:55:58.236+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-05T21:55:58.259+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-05 21:45:19.708651+00:00
+[2023-11-05T21:55:58.270+0000] {standard_task_runner.py:57} INFO - Started process 44839 to run task
+[2023-11-05T21:55:58.274+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'fetch_google_data_v03', '3rd_task', 'manual__2023-11-05T21:45:19.708651+00:00', '--job-id', '233', '--raw', '--subdir', 'DAGS_FOLDER/fetch_data.py', '--cfg-path', '/tmp/tmpbq8pi44a']
+[2023-11-05T21:55:58.278+0000] {standard_task_runner.py:85} INFO - Job 233: Subtask 3rd_task
+[2023-11-05T21:55:58.360+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:45:19.708651+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:55:58.374+0000] {task_command.py:416} INFO - Running <TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:45:19.708651+00:00 [running]> on host 2e5f9e164ff4
+[2023-11-05T21:55:58.505+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='fetch_google_data_v03' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-05T21:45:19.708651+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-05T21:45:19.708651+00:00'
+[2023-11-05T21:55:58.508+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-05T21:55:58.511+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/fetch_automatic_downloads.py']
+[2023-11-05T21:55:58.531+0000] {subprocess.py:86} INFO - Output:
+[2023-11-05T22:01:55.431+0000] {subprocess.py:93} INFO - Downloading data for:  italy_and_regions
+[2023-11-05T22:01:55.502+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv
+[2023-11-05T22:01:55.504+0000] {subprocess.py:93} INFO - 
+[2023-11-05T22:01:55.505+0000] {subprocess.py:93} INFO - File written to:  /opt/***/dags/data/inputs/downloaded/italy_and_regions/2023-11-05/dpc-covid19-ita-regioni (1).csv
+[2023-11-05T22:01:55.515+0000] {subprocess.py:93} INFO - Downloading data for:  nytimes
+[2023-11-05T22:01:55.517+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
+[2023-11-05T22:01:55.518+0000] {subprocess.py:93} INFO - 
+[2023-11-05T22:01:55.520+0000] {subprocess.py:93} INFO - File written to:  /opt/***/dags/data/inputs/downloaded/nytimes/2023-11-05/us-counties (1).csv
+[2023-11-05T22:01:55.522+0000] {subprocess.py:93} INFO - Downloading data for:  our_world_in_data
+[2023-11-05T22:01:55.523+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+[2023-11-05T22:01:55.525+0000] {subprocess.py:93} INFO - was not able to retrieve data from source_url
+[2023-11-05T22:01:55.526+0000] {subprocess.py:93} INFO - Downloading data for:  oxford_policy
+[2023-11-05T22:01:55.528+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv
+[2023-11-05T22:01:55.530+0000] {subprocess.py:93} INFO - was not able to retrieve data from source_url
+[2023-11-05T22:01:55.531+0000] {subprocess.py:93} INFO - Downloading data for:  spain_and_regions
+[2023-11-05T22:01:55.533+0000] {subprocess.py:93} INFO - Source url:  https://cnecovid.isciii.es/covid19/resources/agregados.csv
+[2023-11-05T22:01:55.534+0000] {subprocess.py:93} INFO - was not able to retrieve data from source_url
+[2023-11-05T22:01:55.535+0000] {subprocess.py:93} INFO - Downloading data for:  sweden_hospitalizations
+[2023-11-05T22:01:55.537+0000] {subprocess.py:93} INFO - Source url:  https://www.arcgis.com/sharing/rest/content/items/b5e7488e117749c19881cce45db13f7e/data
+[2023-11-05T22:01:55.539+0000] {subprocess.py:93} INFO - was not able to retrieve data from source_url
+[2023-11-05T22:01:55.540+0000] {subprocess.py:93} INFO - Downloading data for:  switzerland_regions
+[2023-11-05T22:01:55.542+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/openZH/covid_19/master/COVID19_Fallzahlen_CH_total_v2.csv
+[2023-11-05T22:01:55.544+0000] {subprocess.py:93} INFO - was not able to retrieve data from source_url
+[2023-11-05T22:01:55.546+0000] {subprocess.py:93} INFO - Done with fetch_automatic_downloads.py
+[2023-11-05T22:01:55.874+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-05T22:01:56.536+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=fetch_google_data_v03, task_id=3rd_task, execution_date=20231105T214519, start_date=20231105T215558, end_date=20231105T220156
+[2023-11-05T22:01:56.966+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-05T22:01:57.213+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

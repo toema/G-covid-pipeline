@@ -1,0 +1,2 @@
+[2023-11-05T00:18:13.277+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v02/run_id=manual__2023-11-04T23:57:57.757578+00:00/task_id=2nd_task2 permission to 509
+[2023-11-05T00:18:13.335+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v02/run_id=manual__2023-11-04T23:57:57.757578+00:00/task_id=2nd_task2 permission to 509

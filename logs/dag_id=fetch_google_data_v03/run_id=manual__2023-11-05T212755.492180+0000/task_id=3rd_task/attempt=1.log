@@ -1,0 +1,59 @@
+[2023-11-05T21:28:28.721+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:27:55.492180+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:28:28.772+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:27:55.492180+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:28:28.863+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:27:55.492180+00:00 [queued]>
+[2023-11-05T21:28:28.891+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:27:55.492180+00:00 [queued]>
+[2023-11-05T21:28:28.893+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-05T21:28:28.928+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-05 21:27:55.492180+00:00
+[2023-11-05T21:28:28.937+0000] {standard_task_runner.py:57} INFO - Started process 40349 to run task
+[2023-11-05T21:28:28.943+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'fetch_google_data_v03', '3rd_task', 'manual__2023-11-05T21:27:55.492180+00:00', '--job-id', '217', '--raw', '--subdir', 'DAGS_FOLDER/fetch_data.py', '--cfg-path', '/tmp/tmp5o2k60zd']
+[2023-11-05T21:28:28.949+0000] {standard_task_runner.py:85} INFO - Job 217: Subtask 3rd_task
+[2023-11-05T21:28:29.086+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v03/run_id=manual__2023-11-05T21:27:55.492180+00:00/task_id=3rd_task permission to 509
+[2023-11-05T21:28:29.099+0000] {task_command.py:416} INFO - Running <TaskInstance: fetch_google_data_v03.3rd_task manual__2023-11-05T21:27:55.492180+00:00 [running]> on host 2e5f9e164ff4
+[2023-11-05T21:28:29.273+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='fetch_google_data_v03' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-05T21:27:55.492180+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-05T21:27:55.492180+00:00'
+[2023-11-05T21:28:29.276+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-05T21:28:29.281+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/fetch_automatic_downloads.py']
+[2023-11-05T21:28:29.300+0000] {subprocess.py:86} INFO - Output:
+[2023-11-05T21:37:32.237+0000] {subprocess.py:93} INFO - Downloading data for:  italy_and_regions
+[2023-11-05T21:37:32.385+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-regioni/dpc-covid19-ita-regioni.csv
+[2023-11-05T21:37:32.388+0000] {subprocess.py:93} INFO - 
+[2023-11-05T21:37:32.390+0000] {subprocess.py:93} INFO - File written to:  /opt/***/dags/data/inputs/downloaded/italy_and_regions/2023-11-05/dpc-covid19-ita-regioni (1).csv
+[2023-11-05T21:37:32.406+0000] {subprocess.py:93} INFO - Downloading data for:  nytimes
+[2023-11-05T21:37:32.408+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
+[2023-11-05T21:37:32.410+0000] {subprocess.py:93} INFO - 
+[2023-11-05T21:37:32.412+0000] {subprocess.py:93} INFO - File written to:  /opt/***/dags/data/inputs/downloaded/nytimes/2023-11-05/us-counties (1).csv
+[2023-11-05T21:37:32.414+0000] {subprocess.py:93} INFO - Downloading data for:  our_world_in_data
+[2023-11-05T21:37:32.416+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv
+[2023-11-05T21:37:32.418+0000] {subprocess.py:93} INFO - 
+[2023-11-05T21:37:32.419+0000] {subprocess.py:93} INFO - File written to:  /opt/***/dags/data/inputs/downloaded/our_world_in_data/2023-11-05/full_data (1).csv
+[2023-11-05T21:37:32.421+0000] {subprocess.py:93} INFO - Downloading data for:  oxford_policy
+[2023-11-05T21:37:32.423+0000] {subprocess.py:93} INFO - Source url:  https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv
+[2023-11-05T21:37:32.426+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-05T21:37:32.427+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/src/scripts/fetch_automatic_downloads.py", line 60, in <module>
+[2023-11-05T21:37:32.429+0000] {subprocess.py:93} INFO -     output = wget.download(source_url, out_path)
+[2023-11-05T21:37:32.431+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/wget.py", line 526, in download
+[2023-11-05T21:37:32.432+0000] {subprocess.py:93} INFO -     (tmpfile, headers) = ulib.urlretrieve(binurl, tmpfile, callback)
+[2023-11-05T21:37:32.434+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 247, in urlretrieve
+[2023-11-05T21:37:32.436+0000] {subprocess.py:93} INFO -     with contextlib.closing(urlopen(url, data)) as fp:
+[2023-11-05T21:37:32.438+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 222, in urlopen
+[2023-11-05T21:37:32.439+0000] {subprocess.py:93} INFO -     return opener.open(url, data, timeout)
+[2023-11-05T21:37:32.442+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 531, in open
+[2023-11-05T21:37:32.444+0000] {subprocess.py:93} INFO -     response = meth(req, response)
+[2023-11-05T21:37:32.446+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 640, in http_response
+[2023-11-05T21:37:32.448+0000] {subprocess.py:93} INFO -     response = self.parent.error(
+[2023-11-05T21:37:32.450+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 569, in error
+[2023-11-05T21:37:32.451+0000] {subprocess.py:93} INFO -     return self._call_chain(*args)
+[2023-11-05T21:37:32.453+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 502, in _call_chain
+[2023-11-05T21:37:32.455+0000] {subprocess.py:93} INFO -     result = func(*args)
+[2023-11-05T21:37:32.456+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/urllib/request.py", line 649, in http_error_default
+[2023-11-05T21:37:32.459+0000] {subprocess.py:93} INFO -     raise HTTPError(req.full_url, code, msg, hdrs, fp)
+[2023-11-05T21:37:32.461+0000] {subprocess.py:93} INFO - urllib.error.HTTPError: HTTP Error 404: Not Found
+[2023-11-05T21:37:32.564+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-11-05T21:37:33.082+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-11-05T21:37:33.155+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=fetch_google_data_v03, task_id=3rd_task, execution_date=20231105T212755, start_date=20231105T212828, end_date=20231105T213733
+[2023-11-05T21:37:33.331+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 217 for task 3rd_task (Bash command failed. The command returned a non-zero exit code 1.; 40349)
+[2023-11-05T21:37:33.768+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-05T21:37:34.065+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

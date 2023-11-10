@@ -1,0 +1,26 @@
+[2023-11-05T00:03:21.743+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=scheduled__2023-11-02T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-05T00:03:21.833+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=scheduled__2023-11-02T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-05T00:03:22.002+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_google_data_v01.3rd_task scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-05T00:03:22.030+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_google_data_v01.3rd_task scheduled__2023-11-02T00:00:00+00:00 [queued]>
+[2023-11-05T00:03:22.033+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 6
+[2023-11-05T00:03:22.064+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-02 00:00:00+00:00
+[2023-11-05T00:03:22.076+0000] {standard_task_runner.py:57} INFO - Started process 2580 to run task
+[2023-11-05T00:03:22.082+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'fetch_google_data_v01', '3rd_task', 'scheduled__2023-11-02T00:00:00+00:00', '--job-id', '131', '--raw', '--subdir', 'DAGS_FOLDER/fetch_data.py', '--cfg-path', '/tmp/tmpkc0p34tt']
+[2023-11-05T00:03:22.088+0000] {standard_task_runner.py:85} INFO - Job 131: Subtask 3rd_task
+[2023-11-05T00:03:22.203+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=scheduled__2023-11-02T00:00:00+00:00/task_id=3rd_task permission to 509
+[2023-11-05T00:03:22.212+0000] {task_command.py:416} INFO - Running <TaskInstance: fetch_google_data_v01.3rd_task scheduled__2023-11-02T00:00:00+00:00 [running]> on host 264d7b91d87b
+[2023-11-05T00:03:22.389+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='fetch_google_data_v01' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-02T00:00:00+00:00'
+[2023-11-05T00:03:22.393+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-05T00:03:22.396+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/fetch_automatic_downloads.py']
+[2023-11-05T00:03:22.420+0000] {subprocess.py:86} INFO - Output:
+[2023-11-05T00:03:22.719+0000] {subprocess.py:93} INFO - python: can't open file '/opt/***/dags/src/scripts/fetch_automatic_downloads.py': [Errno 5] Input/output error
+[2023-11-05T00:03:22.732+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-11-05T00:03:22.758+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-11-05T00:03:22.770+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=fetch_google_data_v01, task_id=3rd_task, execution_date=20231102T000000, start_date=20231105T000322, end_date=20231105T000322
+[2023-11-05T00:03:22.807+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 131 for task 3rd_task (Bash command failed. The command returned a non-zero exit code 2.; 2580)
+[2023-11-05T00:03:22.860+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-05T00:03:22.919+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

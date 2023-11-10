@@ -1,0 +1,25 @@
+[2023-11-07T02:16:54.454+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=manual__2023-11-07T01:20:11.827106+00:00/task_id=3rd_task permission to 509
+[2023-11-07T02:16:55.382+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=manual__2023-11-07T01:20:11.827106+00:00/task_id=3rd_task permission to 509
+[2023-11-07T02:16:57.334+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: export_google_data_v02.3rd_task manual__2023-11-07T01:20:11.827106+00:00 [queued]>
+[2023-11-07T02:16:57.723+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: export_google_data_v02.3rd_task manual__2023-11-07T01:20:11.827106+00:00 [queued]>
+[2023-11-07T02:16:57.748+0000] {taskinstance.py:1361} INFO - Starting attempt 5 of 6
+[2023-11-07T02:16:58.180+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-07 01:20:11.827106+00:00
+[2023-11-07T02:16:58.230+0000] {standard_task_runner.py:57} INFO - Started process 13847 to run task
+[2023-11-07T02:16:58.350+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'export_google_data_v02', '3rd_task', 'manual__2023-11-07T01:20:11.827106+00:00', '--job-id', '314', '--raw', '--subdir', 'DAGS_FOLDER/export_data.py', '--cfg-path', '/tmp/tmpdflhqfym']
+[2023-11-07T02:16:58.615+0000] {standard_task_runner.py:85} INFO - Job 314: Subtask 3rd_task
+[2023-11-07T02:16:59.639+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=export_google_data_v02/run_id=manual__2023-11-07T01:20:11.827106+00:00/task_id=3rd_task permission to 509
+[2023-11-07T02:16:59.838+0000] {task_command.py:416} INFO - Running <TaskInstance: export_google_data_v02.3rd_task manual__2023-11-07T01:20:11.827106+00:00 [running]> on host c4630ce72677
+[2023-11-07T02:17:01.651+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='export_google_data_v02' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-07T01:20:11.827106+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-07T01:20:11.827106+00:00'
+[2023-11-07T02:17:01.674+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-07T02:17:01.729+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/export_data.py']
+[2023-11-07T02:17:01.855+0000] {subprocess.py:86} INFO - Output:
+[2023-11-07T02:18:43.838+0000] {subprocess.py:97} INFO - Command exited with return code -9
+[2023-11-07T02:18:44.803+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code -9.
+[2023-11-07T02:18:45.076+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=export_google_data_v02, task_id=3rd_task, execution_date=20231107T012011, start_date=20231107T021657, end_date=20231107T021844
+[2023-11-07T02:18:45.520+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 314 for task 3rd_task (Bash command failed. The command returned a non-zero exit code -9.; 13847)
+[2023-11-07T02:18:45.780+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-07T02:18:46.595+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

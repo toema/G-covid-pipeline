@@ -1,0 +1,33 @@
+[2023-11-04T23:49:59.659+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=3rd_task permission to 509
+[2023-11-04T23:49:59.696+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=3rd_task permission to 509
+[2023-11-04T23:49:59.744+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_google_data_v01.3rd_task manual__2023-11-04T23:49:55.656438+00:00 [queued]>
+[2023-11-04T23:49:59.758+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_google_data_v01.3rd_task manual__2023-11-04T23:49:55.656438+00:00 [queued]>
+[2023-11-04T23:49:59.759+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-04T23:49:59.777+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): 3rd_task> on 2023-11-04 23:49:55.656438+00:00
+[2023-11-04T23:49:59.783+0000] {standard_task_runner.py:57} INFO - Started process 771 to run task
+[2023-11-04T23:49:59.786+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'fetch_google_data_v01', '3rd_task', 'manual__2023-11-04T23:49:55.656438+00:00', '--job-id', '119', '--raw', '--subdir', 'DAGS_FOLDER/fetch_data.py', '--cfg-path', '/tmp/tmpo370eng2']
+[2023-11-04T23:49:59.789+0000] {standard_task_runner.py:85} INFO - Job 119: Subtask 3rd_task
+[2023-11-04T23:49:59.851+0000] {logging_mixin.py:151} INFO - Changing /opt/***/logs/dag_id=fetch_google_data_v01/run_id=manual__2023-11-04T23:49:55.656438+00:00/task_id=3rd_task permission to 509
+[2023-11-04T23:49:59.857+0000] {task_command.py:416} INFO - Running <TaskInstance: fetch_google_data_v01.3rd_task manual__2023-11-04T23:49:55.656438+00:00 [running]> on host 264d7b91d87b
+[2023-11-04T23:49:59.948+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Toema' AIRFLOW_CTX_DAG_ID='fetch_google_data_v01' AIRFLOW_CTX_TASK_ID='3rd_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-04T23:49:55.656438+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-04T23:49:55.656438+00:00'
+[2023-11-04T23:49:59.951+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-04T23:49:59.953+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/src/scripts/fetch_automatic_downloads.py']
+[2023-11-04T23:49:59.968+0000] {subprocess.py:86} INFO - Output:
+[2023-11-05T12:50:55.140+0000] {local_task_job_runner.py:205} ERROR - Heartbeat time limit exceeded!
+[2023-11-05T12:51:01.702+0000] {process_utils.py:131} INFO - Sending 15 to group 771. PIDs of all processes in the group: [772, 771]
+[2023-11-05T12:51:01.800+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 771
+[2023-11-05T12:51:06.599+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2023-11-05T12:51:07.604+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2023-11-05T12:51:11.508+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 201, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2023-11-05T12:51:12.349+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=fetch_google_data_v01, task_id=3rd_task, execution_date=20231104T234955, start_date=20231104T234959, end_date=20231105T125112
+[2023-11-05T12:51:13.509+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 119 for task 3rd_task (Task received SIGTERM signal; 771)
+[2023-11-05T12:51:13.757+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=772, status='terminated', started='23:49:59') (772) terminated with exit code None
+[2023-11-05T12:51:13.768+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=771, status='terminated', exitcode=1, started='23:49:59') (771) terminated with exit code 1

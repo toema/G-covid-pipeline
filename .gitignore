@@ -1,0 +1,8 @@
+pathToOpenCovid19/
+dags/data/inputs/downloaded/our_world_in_data/2023-11-05/full_data.csv
+dags/data/inputs/downloaded/nytimes/2023-11-04/us-counties.csv
+dags/data/inputs/downloaded/nytimes/2023-11-09/us-counties.csv4kb_9r1u.tmp
+dags/data/inputs/downloaded/our_world_in_data/2023-11-04/full_data.csvb6yuc0ej.tmp
+dags/data/inputs/downloaded/our_world_in_data/2023-11-05/full_data (1).csv
+dags/data/inputs/downloaded/our_world_in_data/2023-11-09/full_data.csv
+dags/data/exports/cc_by_nc/aggregated_cc_by_nc.csv
